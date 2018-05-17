@@ -78,11 +78,11 @@ class Board:
     printf('\n')
     for rowi in range(s.HEIGHT-1, -1, -1):
       printf('|')
-      for coli in range(s.WIDTH):
-        printf(s.cols[coli][rowi])
+      labels = [s.cols[coli][rowi] for coli in range(s.WIDTH)]
+      printf(' '.join(labels))
       printf('|\n')
-    printf('+%s+\n' % ('-' * s.WIDTH))
-    printf(' %s \n' % ''.join([str(i) for i in range(s.WIDTH)]))
+    printf('+%s+\n' % '-'.join(('-' * s.WIDTH)))
+    printf(' %s \n' % ' '.join([str(i) for i in range(s.WIDTH)]))
 
 class Player():
   def __init__(s, name, token):
